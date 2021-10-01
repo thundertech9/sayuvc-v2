@@ -6,7 +6,6 @@ RUN pip3 install -U pip
 RUN curl -sL https://deb.nodesource.com/setup_15.x | bash -
 RUN apt-get install -y nodejs
 RUN npm i -g npm
-RUN pip3 install pymongo
 RUN mkdir /app/
 WORKDIR /app/
 COPY . /app/
