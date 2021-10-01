@@ -14,5 +14,6 @@ ffmpeg
 Pillow
 ujson
 motor
+yt_dlp
 wget
 pymongo[srv]
