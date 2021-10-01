@@ -1,3 +1,17 @@
+import os
+import shutil
+import sys
+import traceback
+
+import psutil
+from git import Repo
+from git.exc import GitCommandError, InvalidGitRepositoryError
+from pyrogram import Client, filters
+from pyrogram.types import Message
+from handlers.song import get_text, humanbytes
+from helpers.filters import command
+from helpers.database import db
+
 @Client.on_message(command("gstats"))
 @sudo_users_only
 async def botstats(_, message: Message):
