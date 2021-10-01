@@ -193,8 +193,8 @@ async def play(_, message: Message):
                             text="YouTube",
                             url=f"{url}"),
                         InlineKeyboardButton(
-                            text="Download",
-                            url=f"{durl}")
+                            text="Support",
+                            url=f"t.me/RukaSupport")
 
                     ]
                 ]
@@ -226,7 +226,7 @@ async def play(_, message: Message):
         await lel.edit("**Finding the song...**")
         query = message.text.split(None, 1)[1]
         # print(query)
-        await lel.edit("**Processing sounds...**")
+        await lel.edit("**Processing...**")
         try:
             results = YoutubeSearch(query, max_results=1).to_dict()
             url = f"https://youtube.com{results[0]['url_suffix']}"
