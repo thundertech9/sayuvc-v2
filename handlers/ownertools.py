@@ -3,7 +3,6 @@ import os
 import shutil
 import sys
 import traceback
-from functools import wraps
 from os import environ, execle
 
 import psutil
