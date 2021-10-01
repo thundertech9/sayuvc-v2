@@ -18,10 +18,10 @@ async def pause(_, message: Message):
     ) or (
             callsmusic.pytgcalls.active_calls[message.chat.id] == 'paused'
     ):
-        await message.reply_text("__Nothing is playing!__")
+        await message.reply_text("Nothing is playing!")
     else:
         callsmusic.pytgcalls.pause_stream(message.chat.id)
-        await message.reply_text("__Paused!__")
+        await message.reply_text("Paused!")
 
 
 @Client.on_message(command("resume") & other_filters)
@@ -33,10 +33,10 @@ async def resume(_, message: Message):
     ) or (
             callsmusic.pytgcalls.active_calls[message.chat.id] == 'playing'
     ):
-        await message.reply_text("__Nothing is paused!__")
+        await message.reply_text("Nothing is paused!")
     else:
         callsmusic.pytgcalls.resume_stream(message.chat.id)
-        await message.reply_text("__Resumed!__")
+        await message.reply_text("Resumed!")
 
 
 @Client.on_message(command("end") & other_filters)
@@ -44,7 +44,7 @@ async def resume(_, message: Message):
 @authorized_users_only
 async def stop(_, message: Message):
     if message.chat.id not in callsmusic.pytgcalls.active_calls:
-        await message.reply_text("__Nothing is streaming__")
+        await message.reply_text("Nothing is streaming")
     else:
         try:
             callsmusic.queues.clear(message.chat.id)
@@ -52,7 +52,7 @@ async def stop(_, message: Message):
             pass
 
         callsmusic.pytgcalls.leave_group_call(message.chat.id)
-        await message.reply_text("__Stopped streaming!__")
+        await message.reply_text("Stopped streaming!")
 
 
 @Client.on_message(command("skip") & other_filters)
@@ -60,7 +60,7 @@ async def stop(_, message: Message):
 @authorized_users_only
 async def skip(_, message: Message):
     if message.chat.id not in callsmusic.pytgcalls.active_calls:
-        await message.reply_text("__Nothing is playing to skip__")
+        await message.reply_text("Nothing is playing to skip")
     else:
         callsmusic.queues.task_done(message.chat.id)
 
