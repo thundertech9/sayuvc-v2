@@ -10,6 +10,8 @@ BOT_NAME = getenv("BOT_NAME")
 OWNER_ID = getenv("OWNER_ID")
 BOT_USERNAME = getenv("BOT_USERNAME")
 GROUP_SUPPORT = getenv("GROUP_SUPPORT")
+U_BRANCH = getenv("U_BRANCH")
+UPSTREAM_REPO = getenv("UPSTREAM_REPO")
 
 API_ID = int(getenv("API_ID"))
 API_HASH = getenv("API_HASH")
