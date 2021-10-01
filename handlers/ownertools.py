@@ -25,7 +25,7 @@ async def botstats(_, message: Message):
     disk_usage = psutil.disk_usage("/").percent
     total_users = await db.total_users_count()
     await message.reply_text(
-        text=f"****System Stats**** \n\n** »__bot version__** `v2.0` \n\n** »__total users__** \n » **__on bot pm__** `{total_users}` \n\n** »__disk usage__** \n » ** »__disk space__** `{total}` \n » **__used__** `{used}({disk_usage}%)` \n » **__free__** `{free}` \n\n****hardware usage**** \n » **>CPU usage:** `{cpu_usage}%` \n > **RAM usage:** `{ram_usage}%`",
+        text=f"****[System Stats of Sayu**](t.me/Sayusuperbot)** \n\n** ❂__bot version__** `v2.0` \n\n** __M-Stats__`{total_users}` __Users__ \n\n** **Disk Usage** ** \n » **__disk space__** `{total}` \n » **__used__** `{used}({disk_usage}%)` \n » **__free__** `{free}` \n\n** **hardware usage** ** \n **>CPU** __usage__: `{cpu_usage}%` \n > **RAM** __Usage__: `{ram_usage}%`",
         parse_mode="Markdown",
         quote=True,
     )
