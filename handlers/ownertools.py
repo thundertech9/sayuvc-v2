@@ -12,9 +12,6 @@ from pyrogram.types import Message
 from config import (
     BOT_USERNAME,
     GROUP_SUPPORT,
-    HEROKU_API_KEY,
-    HEROKU_APP_NAME,
-    HEROKU_URL,
     OWNER_ID,
     U_BRANCH,
     UPSTREAM_REPO,
