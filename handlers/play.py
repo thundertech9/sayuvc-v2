@@ -143,7 +143,7 @@ async def play(_, message: Message):
 
         file_name = get_file_name(audio)
         title = file_name
-        thumb_name = "https://telegra.ph/file/caeb50039026a746e7252.jpg"
+        thumb_name = "https://telegra.ph/file/38e2589a87380f8c5d1a4.jpg"
         thumbnail = thumb_name
         duration = round(audio.duration / 60)
         views = "Locally added"
@@ -261,8 +261,8 @@ async def play(_, message: Message):
                             text="YouTube",
                             url=f"{url}"),
                         InlineKeyboardButton(
-                            text="Download",
-                            url=f"{durl}")
+                            text="Support",
+                            url=f"t.me/RukaSupport")
 
                     ]
                 ]
@@ -279,7 +279,7 @@ async def play(_, message: Message):
         position = await queues.put(message.chat.id, file=file_path)
         await message.reply_photo(
         photo="final.png", 
-        caption="**🎵 Song:** {}\n**🕒 Duration:** {} min\n**👤 Added By:** {}\n\n**#⃣ Queued Position:** {}".format(
+        caption="**Song:** {}\n**Duration:** {} min\n**Requested By:** {}\n\n**#⃣ __Waiting Position__:** {}".format(
         title, duration, message.from_user.mention(), position
         ),
         reply_markup=keyboard)
