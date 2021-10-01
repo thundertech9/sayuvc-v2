@@ -8,8 +8,11 @@ from os import environ, execle
 import psutil
 from helpers.filters import command
 from pyrogram import Client, filters
+from helpers.decorators import sudo_users_only
 from pyrogram.types import Message
 from helpers.database import db
+
+
 # Stats Of Your Bot
 @Client.on_message(command("sysinfo"))
 @sudo_users_only
