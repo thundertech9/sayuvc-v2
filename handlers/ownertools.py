@@ -84,19 +84,19 @@ async def get_uptime(client: Client, message: Message):
  )
 @Client.on_message(command("alive"))
 @sudo_users_only
-    async def give_sysinfo(client, message):
-    splatform = platform.system()
-    platform_release = platform.release()
-    platform_version = platform.version()
-    architecture = platform.machine()
-    hostname = socket.gethostname()
-    ip_address = socket.gethostbyname(socket.gethostname())
-    mac_address = ":".join(re.findall("..", "%012x" % uuid.getnode()))
-    processor = platform.processor()
-    ram = humanbytes(round(psutil.virtual_memory().total))
-    cpu_freq = psutil.cpu_freq().current
-    if cpu_freq >= 1000:
-        cpu_freq = f"{round(cpu_freq / 1000, 2)}GHz"
+async def give_sysinfo(client, message):
+splatform = platform.system()
+platform_release = platform.release()
+platform_version = platform.version()
+architecture = platform.machine()
+hostname = socket.gethostname()
+ip_address = socket.gethostbyname(socket.gethostname())
+mac_address = ":".join(re.findall("..", "%012x" % uuid.getnode()))
+processor = platform.processor()
+ram = humanbytes(round(psutil.virtual_memory().total))
+cpu_freq = psutil.cpu_freq().current
+if cpu_freq >= 1000:
+cpu_freq = f"{round(cpu_freq / 1000, 2)}GHz"
     else:
         cpu_freq = f"{round(cpu_freq, 2)}MHz"
     du = psutil.disk_usage(client.workdir)
