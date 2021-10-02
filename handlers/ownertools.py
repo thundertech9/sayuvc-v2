@@ -81,7 +81,7 @@ async def get_uptime(client: Client, message: Message):
         f"• **__Uptime__:** `{uptime}`\n"
         f"• **__Start time__:** `{START_TIME_ISO}`"
     )
- @Client.on_message(command(["alive", f"alive@{BOT_USERNAME}"]) & ~filters.edited)
+      @Client.on_message(command("alive"))
      @sudo_users_only
      async def give_sysinfo(client, message):
     splatform = platform.system()
