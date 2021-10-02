@@ -30,7 +30,7 @@ async def botstats(_, message: Message):
         quote=True,
     )
 
-@Client.on_message(command(["uptime", f"uptime@{BOT_USERNAME}"]) & ~filters.edited)
+@Client.on_message(command(["uptime", f"mstart"]) & ~filters.edited)
 @sudo_users_only
 async def get_uptime(client: Client, message: Message):
     current_time = datetime.utcnow()
