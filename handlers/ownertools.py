@@ -96,7 +96,7 @@ async def give_sysinfo(client, message):
     ram = humanbytes(round(psutil.virtual_memory().total))
     cpu_freq = psutil.cpu_freq().current
     if cpu_freq >= 1000:
-    cpu_freq = f"{round(cpu_freq / 1000, 2)}GHz"
+        cpu_freq = f"{round(cpu_freq / 1000, 2)}GHz"
     else:
     cpu_freq = f"{round(cpu_freq, 2)}MHz"
     du = psutil.disk_usage(client.workdir)
