@@ -31,7 +31,6 @@ async def botstats(_, message: Message):
     )
 
 @Client.on_message(command(["uptime", f"mstart"]) & ~filters.edited)
-@sudo_users_only
 async def get_uptime(client: Client, message: Message):
     current_time = datetime.utcnow()
     uptime_sec = (current_time - START_TIME).total_seconds()
