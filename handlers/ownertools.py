@@ -71,7 +71,7 @@ async def get_uptime(client: Client, message: Message):
     uptime = await _human_time_duration(int(uptime_sec))
     await message.reply_text(
         "MUSIC Bot Is Running:\n"
-        f"• **__Ping__:** `{delta_ping * 1000:.3f} ms`\n"
+        f"• **__Ping__:** `error ms`\n"
         f"• **__Uptime__:** `{uptime}`\n"
         f"• **__Start time__:** `{START_TIME_ISO}`"
     )
