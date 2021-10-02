@@ -20,7 +20,7 @@ from pyrogram.types import Message
 from helpers.filters import command
 from pyrogram import Client, filters
 from config import BOT_NAME, BOT_USERNAME
-from helpers.decorators import sudo_users_only
+from helpers.decorator import sudo_users_only
 from handlers.songs import get_text, humanbytes
 
 START_TIME = datetime.utcnow()
