@@ -1,6 +1,9 @@
 #This Code Owned By @Itz_Samrat
 
-
+import platform
+import re
+import socket
+import uuid
 import os
 import shutil
 import sys
@@ -75,3 +78,31 @@ async def get_uptime(client: Client, message: Message):
         f"• **__Uptime__:** `{uptime}`\n"
         f"• **__Start time__:** `{START_TIME_ISO}`"
     )
+    mac_address = ":".join(re.findall("..", "%012x" % uuid.getnode()))
+    processor = platform.processor()
+    ram = humanbytes(round(psutil.virtual_memory().total))
+    cpu_freq = psutil.cpu_freq().current
+    if cpu_freq >= 1000:
+        cpu_freq = f"{round(cpu_freq / 1000, 2)}GHz"
+    else:
+        cpu_freq = f"{round(cpu_freq, 2)}MHz"
+    du = psutil.disk_usage(client.workdir)
+    psutil.disk_io_counters()
+    disk = f"{humanbytes(du.used)} / {humanbytes(du.total)} " f"({du.percent}%)"
+    cpu_len = len(psutil.Process().cpu_affinity())
+    somsg = f"""**Hello I'm Alived [.](https://telegra.ph/file/5a533a741f42053526adc.jpg) **
+    
+**PlatForm :** `{splatform}`
+**PlatForm - Release :** `{platform_release}`
+**PlatFork - Version :** `{platform_version}`
+**Architecture :** `{architecture}`
+**Hostname :** `Unknown`
+**IP :** `{ip_address}`
+**Mac :** `{mac_address}`
+**Processor :** `{processor}`
+**Ram : ** `{ram}`
+**CPU :** `{cpu_len}`
+**CPU FREQ :** `{cpu_freq}`
+**DISK :** `{disk}`
+    """
+    await message.reply(somsg)
