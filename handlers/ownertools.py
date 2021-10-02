@@ -20,7 +20,7 @@ from pyrogram.types import Message
 from pyrogram import Client, filters
 from helpers.filters import command
 from pyrogram import Client, filters
-from config import BOT_NAME, BOT_USERNAME
+from config import BOT_NAME, BOT_USERNAME, SUDO_USERS
 from helpers.decorator import sudo_users_only
 from handlers.songs import get_text, humanbytes
 
@@ -85,7 +85,7 @@ async def get_uptime(client: Client, message: Message):
 @Client.on_message(command("alive"))
 @sudo_users_only
 async def give_sysinfo(client, message):
-splatform = platform.system():
+   splatform = platform.system()
 platform_release = platform.release()
 platform_version = platform.version()
 architecture = platform.machine()
