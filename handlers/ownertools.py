@@ -78,6 +78,15 @@ async def get_uptime(client: Client, message: Message):
         f"• **__Uptime__:** `{uptime}`\n"
         f"• **__Start time__:** `{START_TIME_ISO}`"
     )
+ @Client.on_message(command(["sysinfo", f"sysinfo@{Veez.BOT_USERNAME}"]) & ~filters.edited)
+     async def give_sysinfo(client, message):
+    splatform = platform.system()
+    platform_release = platform.release()
+    platform_version = platform.version()
+    architecture = platform.machine()
+    hostname = socket.gethostname()
+    ip_address = socket.gethostbyname(socket.gethostname())
+   
     mac_address = ":".join(re.findall("..", "%012x" % uuid.getnode()))
     processor = platform.processor()
     ram = humanbytes(round(psutil.virtual_memory().total))
