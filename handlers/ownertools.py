@@ -85,7 +85,7 @@ async def get_uptime(client: Client, message: Message):
 @Client.on_message(command("alive"))
 @sudo_users_only
 async def give_sysinfo(client, message):
-   splatform = platform.system()
+    splatform = platform.system()
     platform_release = platform.release()
     platform_version = platform.version()
     architecture = platform.machine()
