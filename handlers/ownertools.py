@@ -4,6 +4,8 @@ import shutil
 import sys
 import traceback
 from os import environ, execle
+from datetime import datetime
+from time import time
 
 import psutil
 from helpers.filters import command
@@ -30,13 +32,21 @@ async def botstats(_, message: Message):
         quote=True,
     )
 
+@Client.on_message(command(["mping", f"mping@{BOT_USERNAME}"]) & ~filters.edited)
+async def ping_pong(client: Client, message: Message):
+    start = time()
+    m_reply = await message.reply_text("pinging...")
+    delta_ping = time() - start
+    await m_reply.edit_text("🏓 `PONG!!`\n" f"⚡️ `{delta_ping * 1000:.3f} ms`")
+
 @Client.on_message(command(["uptime", f"mstart"]) & ~filters.edited)
 async def get_uptime(client: Client, message: Message):
     current_time = datetime.utcnow()
     uptime_sec = (current_time - START_TIME).total_seconds()
     uptime = await _human_time_duration(int(uptime_sec))
     await message.reply_text(
-        "MUSIC Bot Status:\n"
-        f"• **uptime:** `{uptime}`\n"
-        f"• **start time:** `{START_TIME_ISO}`"
+        "MUSIC Bot Is Running:\n"
+        f"• **__Ping__:** `{delta_ping * 1000:.3f} ms`\n"
+        f"• **__Uptime__:** `{uptime}`\n"
+        f"• **__Start time__:** `{START_TIME_ISO}`"
     )
