@@ -103,7 +103,7 @@ async def get_uptime(client: Client, message: Message):
     psutil.disk_io_counters()
     disk = f"{humanbytes(du.used)} / {humanbytes(du.total)} " f"({du.percent}%)"
     cpu_len = len(psutil.Process().cpu_affinity())
-    somsg = f"""**Hello I'm Alived [.](https://telegra.ph/file/5a533a741f42053526adc.jpg) **
+    somsg = f"""**Hello I'm Alived**
     
 **PlatForm :** `{splatform}`
 **PlatForm - Release :** `{platform_release}`
