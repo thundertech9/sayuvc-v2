@@ -98,7 +98,7 @@ async def give_sysinfo(client, message):
     if cpu_freq >= 1000:
         cpu_freq = f"{round(cpu_freq / 1000, 2)}GHz"
     else:
-    cpu_freq = f"{round(cpu_freq, 2)}MHz"
+        cpu_freq = f"{round(cpu_freq, 2)}MHz"
     du = psutil.disk_usage(client.workdir)
     psutil.disk_io_counters()
     disk = f"{humanbytes(du.used)} / {humanbytes(du.total)} " f"({du.percent}%)"
