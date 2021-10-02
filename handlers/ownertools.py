@@ -17,6 +17,7 @@ from os import environ, execle
 import psutil
 from helpers.database import db
 from pyrogram.types import Message
+from pyrogram import Client, filters
 from helpers.filters import command
 from pyrogram import Client, filters
 from config import BOT_NAME, BOT_USERNAME
@@ -83,14 +84,13 @@ async def get_uptime(client: Client, message: Message):
     )
       @Client.on_message(command("alive"))
      @sudo_users_only
-     async def give_sysinfo(client, message):
+    async def give_sysinfo(client, message):
     splatform = platform.system()
     platform_release = platform.release()
     platform_version = platform.version()
     architecture = platform.machine()
     hostname = socket.gethostname()
     ip_address = socket.gethostbyname(socket.gethostname())
-   
     mac_address = ":".join(re.findall("..", "%012x" % uuid.getnode()))
     processor = platform.processor()
     ram = humanbytes(round(psutil.virtual_memory().total))
