@@ -20,6 +20,7 @@ from pyrogram.types import Message
 from helpers.filters import command
 from pyrogram import Client, filters
 from config import BOT_NAME, BOT_USERNAME
+from helpers.decorators import sudo_users_only
 from handlers.songs import get_text, humanbytes
 
 START_TIME = datetime.utcnow()
@@ -78,7 +79,7 @@ async def get_uptime(client: Client, message: Message):
         f"• **__Uptime__:** `{uptime}`\n"
         f"• **__Start time__:** `{START_TIME_ISO}`"
     )
- @Client.on_message(command(["alive", f"mstats"]) & ~filters.edited)
+ @Client.on_message(command(["alive", f"alive@{BOT_USERNAME}"]) & ~filters.edited)
      async def give_sysinfo(client, message):
     splatform = platform.system()
     platform_release = platform.release()
