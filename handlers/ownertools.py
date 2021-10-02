@@ -46,6 +46,7 @@ async def _human_time_duration(seconds):
 
 # Stats Of Your Bot
 @Client.on_message(command("sysinfo"))
+@sudo_users_only
 async def botstats(_, message: Message):
     total, used, free = shutil.disk_usage(".")
     total = humanbytes(total)
@@ -69,6 +70,7 @@ async def ping_pong(client: Client, message: Message):
     await m_reply.edit_text("🏓 `PONG!!`\n" f"⚡️ `{delta_ping * 1000:.3f} ms`")
 
 @Client.on_message(command(["uptime", f"mstart"]) & ~filters.edited)
+@sudo_users_only
 async def get_uptime(client: Client, message: Message):
     current_time = datetime.utcnow()
     uptime_sec = (current_time - START_TIME).total_seconds()
@@ -80,6 +82,7 @@ async def get_uptime(client: Client, message: Message):
         f"• **__Start time__:** `{START_TIME_ISO}`"
     )
  @Client.on_message(command(["alive", f"alive@{BOT_USERNAME}"]) & ~filters.edited)
+     @sudo_users_only
      async def give_sysinfo(client, message):
     splatform = platform.system()
     platform_release = platform.release()
