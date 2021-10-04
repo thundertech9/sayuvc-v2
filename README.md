@@ -23,7 +23,7 @@
 #### Admins only
 - `/pause` - pause song play
 - `/resume` - resume song play
-- `/skip` - play next song
+- `/skip` - play next song.
 - `/end` - stop music play
 
 ### Deploy To Heroku</h4>
