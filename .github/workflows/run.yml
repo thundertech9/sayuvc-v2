@@ -17,7 +17,6 @@ env:
   BOT_TOKEN: "${{ secrets.BOT_TOKEN }}"
   DATABASE_URL: "${{ secrets.DATABASE_URL }}"
   SUDO_USERS: "${{ secrets.SUDO_USERS }}"
-  BOT_USERNAME: "${{ secrets.BOT_USERNAME }}"
   U_BRANCH: "${{ secrets.U_BRANCH }}"
   UPSTREAM_REPO: "${{ secrets.UPSTREAM_REPO }}"
   CHANNEL_NAME: "${{ secrets.ASSISTANT_NAME }}"
