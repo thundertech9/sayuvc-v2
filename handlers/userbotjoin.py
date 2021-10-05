@@ -23,23 +23,23 @@ async def addchannel(client, message):
         invitelink = await client.export_chat_invite_link(chid)
     except:
         await message.reply_text(
-            "<b>promote me as admin first !</b>",
+            "<b>__promote me as admin first__ !</b>",
         )
         return
 
     try:
         user = await USER.get_me()
     except:
-        user.first_name = "music assistant"
+        user.first_name = "Sayuvc"
 
     try:
         await USER.join_chat(invitelink)
         await USER.send_message(
-            message.chat.id, "i'm joined here for playing music on voice chat/n/n Pls Join @RukaSupport"
+            message.chat.id, "__i'm joined here for playing music on voice chat__"
         )
     except UserAlreadyParticipant:
         await message.reply_text(
-            f"<b>✅ userbot already joined group.</b>",
+            f"<b>__Sayuvc already joined group.</b>",
         )
     except Exception as e:
         print(e)
@@ -49,7 +49,7 @@ async def addchannel(client, message):
         )
         return
     await message.reply_text(
-        f"<b>✅ userbot successfully joined group.</b>",
+        f"<b>Yeah __SayuVc Here__.</b>",
     )
 
 
@@ -60,7 +60,7 @@ async def addchannel(client, message):
 )
 async def rem(client, message):
     try:
-        await USER.send_message(message.chat.id, "✅ userbot successfully left group")
+        await USER.send_message(message.chat.id, "__Sayuvc left  the group__")
         await USER.leave_chat(message.chat.id)
     except:
         await message.reply_text(
