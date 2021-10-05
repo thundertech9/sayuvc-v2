@@ -14,7 +14,6 @@ env:
   BOT_USERNAME: "${{ secrets.BOT_USERNAME }}"
   DURATION_LIMIT: "${{ secrets.DURATION_LIMIT }}"
   ASSISTANT_NAME: "${{ secrets.ASSISTANT_NAME }}"
-  DURATION_LIMIT: "${{ secrets.DURATION_LIMIT }}"
   BOT_TOKEN: "${{ secrets.BOT_TOKEN }}"
   DATABASE_URL: "${{ secrets.DATABASE_URL }}"
   SUDO_USERS: "${{ secrets.SUDO_USERS }}"
