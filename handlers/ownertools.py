@@ -78,7 +78,7 @@ async def get_uptime(client: Client, message: Message):
     uptime = await _human_time_duration(int(uptime_sec))
     await message.reply_text(
         "MUSIC Bot Is Running:\n"
-        f"• **__Ping__:** `error ms`\n"
+        f"• **__Ping__:** `<> ms`\n"
         f"• **__Uptime__:** `{uptime}`\n"
         f"• **__Start time__:** `{START_TIME_ISO}`"
  )
@@ -109,7 +109,6 @@ async def give_sysinfo(client, message):
 **PlatForm - Release :** `{platform_release}`
 **PlatFork - Version :** `{platform_version}`
 **Architecture :** `{architecture}`
-**Hostname :** `Heroku`
 **IP :** `{ip_address}`
 **Mac :** `{mac_address}`
 **Processor :** `{processor}`
